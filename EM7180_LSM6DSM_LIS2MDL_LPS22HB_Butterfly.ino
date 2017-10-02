@@ -322,7 +322,7 @@ void loop() {
       Serial.print("Gyro temperature is ");  Serial.print(Gtemperature, 1);  Serial.println(" degrees C"); // Print T values to tenths of s degree C
     }
 
-    Mtemperature = ((float) LIS2MDLData[3]) / 64.0f + 25.0f; // Mag chip temperature in degrees Centigrade
+    Mtemperature = ((float) LIS2MDLData[3]) / 256.0f + 25.0f; // Mag chip temperature in degrees Centigrade
     // Print temperature in degrees Centigrade      
     if(SerialDebug) {
       Serial.print("Mag temperature is ");  Serial.print(Mtemperature, 1);  Serial.println(" degrees C"); // Print T values to tenths of s degree C
