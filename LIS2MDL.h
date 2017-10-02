@@ -60,6 +60,7 @@ class LIS2MDL
   void selfTest();
   uint8_t status();
   void readData(int16_t * destination);
+  int16_t readTemperature();
   void I2Cscan();
   void writeByte(uint8_t address, uint8_t subAddress, uint8_t data);
   uint8_t readByte(uint8_t address, uint8_t subAddress);
