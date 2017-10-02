@@ -60,13 +60,22 @@ uint8_t LIS2MDL::status()
 
 void LIS2MDL::readData(int16_t * destination)
 {
-  uint8_t rawData[8];  // x/y/z mag register data stored here
-  readBytes(LIS2MDL_ADDRESS, (0x80 | LIS2MDL_OUTX_L_REG), 8, &rawData[0]);  // Read the 8 raw data registers into data array
+  uint8_t rawData[6];  // x/y/z mag register data stored here
+  readBytes(LIS2MDL_ADDRESS, (0x80 | LIS2MDL_OUTX_L_REG), 8, &rawData[0]);  // Read the 6 raw data registers into data array
 
   destination[0] = ((int16_t)rawData[1] << 8) | rawData[0] ;       // Turn the MSB and LSB into a signed 16-bit value
   destination[1] = ((int16_t)rawData[3] << 8) | rawData[2] ;  
   destination[2] = ((int16_t)rawData[5] << 8) | rawData[4] ; 
-  destination[3] = ((int16_t)rawData[7] << 8) | rawData[6] ;   
+}
+
+
+int16_t LIS2MDL::readTemperature()
+{
+  uint8_t rawData[2];  // x/y/z mag register data stored here
+  readBytes(LIS2MDL_ADDRESS, (0x80 | LIS2MDL_TEMP_OUT_L_REG), 2, &rawData[0]);  // Read the 8 raw data registers into data array
+
+  int16_t temp = ((int16_t)rawData[1] << 8) | rawData[0] ;       // Turn the MSB and LSB into a signed 16-bit value
+  return temp;
 }
 
 
