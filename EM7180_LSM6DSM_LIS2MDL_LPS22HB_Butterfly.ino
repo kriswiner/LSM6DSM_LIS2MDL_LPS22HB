@@ -202,6 +202,8 @@ void setup() {
   attachInterrupt(LSM6DSM_intPin2, myinthandler1, RISING);  // define interrupt for intPin2 output of LSM6DSM
   attachInterrupt(LIS2MDL_intPin , myinthandler2, RISING);  // define interrupt for intPin  output of LIS2MDL
   attachInterrupt(LPS22H_intPin , myinthandler3, RISING);  // define interrupt for intPin  output of LPS22HB
+      
+  LIS2MDL.readData(LIS2MDLData);  // read data register to clear interrupt before main loop
 
 }
 
