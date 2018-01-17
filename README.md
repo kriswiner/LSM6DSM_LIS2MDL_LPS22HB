@@ -14,4 +14,4 @@ Here is the production version with just the three ST sensors:
 
 ![AllST](https://user-images.githubusercontent.com/6698410/33967305-babe2094-e017-11e7-83fb-83cab8c660f8.jpg).
 
-[This](https://www.tindie.com/products/onehorse/all-st-motion-sensor-breakout-board/) available for sale at Tindie.
+[This](https://www.tindie.com/products/onehorse/all-st-motion-sensor-breakout-board/) is available for sale at Tindie.
